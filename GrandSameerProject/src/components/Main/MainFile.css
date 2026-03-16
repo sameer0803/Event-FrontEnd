@@ -1,0 +1,164 @@
+#main-content {
+  position: relative;
+  overflow: hidden;
+  height: 83vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgb(37, 41, 41);
+}
+
+/* 🔹 Background Video */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  perspective: 1000px;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05) translateZ(-10px);
+  animation: floatVideo 10s ease-in-out infinite alternate;
+}
+
+/* Subtle 3D floating effect */
+@keyframes floatVideo {
+  from {
+    transform: scale(1.05) translateY(0px) translateZ(-10px);
+  }
+  to {
+    transform: scale(1.1) translateY(-20px) translateZ(-20px);
+  }
+}
+
+
+/* 🔹 Foreground Content */
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /* border: 2px solid red; */
+  
+  margin-top: -17rem;
+  padding-left: 3rem;
+}
+
+.inner-content {
+  width: 50rem;
+  /* padding: 0rem 4.2rem 4.2rem; */
+  /* padding-top: -10rem; */
+  color: #fff;
+}
+
+/* Heading */
+.inner-content h1 {  
+  font-weight: 600;
+  font-size: 1rem;
+  display: flext;
+  /* color: rgb(100, 220, 226); */
+  
+  
+}
+
+.inner-content h1 strong {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 650;
+  width: 100%;
+}
+
+/* Paragraph */
+/* .intro {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+} */
+
+/* Button */
+.inner-content-button {
+  display: inline-block;
+  font-size: 1.3rem;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 2rem;
+  padding: .5rem 1rem;
+  border-radius: 30px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background-color: #70abdc;
+  color: #333;
+}
+
+.inner-content-button:hover {
+  transform: scale(1.05);
+}
+
+/* ===================== Responsive ===================== */
+
+@media (max-width: 480px){
+/* .background-video {
+  width: 100%;
+  height: 65%;
+  object-fit: cover;
+  transform: scale(1.05) translateZ(-10px);
+  animation: floatVideo 10s ease-in-out infinite alternate;
+} */
+ #main-content {
+  position: relative;
+  overflow: hidden;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgb(37, 41, 41);
+}
+} 
+
+@media (max-width: 1024px) {
+  .inner-content {
+    width: 80%;
+    padding: 5rem 3rem;
+  }
+  .inner-content h1 { font-size: 2rem; }
+  .inner-content h1 strong { font-size: 5rem; }
+  .intro { font-size: 1.3rem; }
+}
+
+@media (max-width: 768px) {
+  .inner-content {
+    width: 90%;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  .inner-content h1 { font-size: 1.8rem; }
+  .inner-content h1 strong { font-size: 4rem; }
+  .intro { font-size: 1.1rem; }
+  .inner-content-button { 
+    width: 100%;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .inner-content {
+    width: 95%;
+    padding: 3rem 1.5rem;
+  }
+  .inner-content h1 { font-size: 1.3rem; }
+  .inner-content h1 strong { font-size: 2rem; }
+  .intro { font-size: 1rem; }
+  .inner-content-button {
+    width: 60%;
+    font-size: 1rem;
+  }
+}

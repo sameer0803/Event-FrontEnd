@@ -1,0 +1,508 @@
+/* ========== SECTION STYLING ========== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap');
+
+.gallery-section {
+  position: relative;
+  background-color: #fafafa;
+  color: #222;
+  margin-top: -1rem;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.gallery-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45vh;
+  min-height: 400px;
+  background-image: url('https://images.pexels.com/photos/28886728/pexels-photo-28886728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  /* Aerial large outdoor event tents/hangars – good match for your theme */
+  /* Alternatives: 
+     https://images.unsplash.com/photo-1540575467063-178a50c2df87 (conference tent)
+     https://images.pexels.com/photos/17146129/pexels-photo-17146129.jpeg (large canopy setup)
+  */
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45vh;
+  min-height: 400px;
+  background: rgba(0, 0, 0, 0.58);
+  z-index: 2;
+}
+
+.gallery-container {
+  position: relative;
+  max-width: 1250px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 3;
+}
+
+.gallery-part {
+  padding: 8rem 2rem 6rem;
+  color: white;
+}
+
+.gallery-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  text-shadow: 0 4px 16px rgba(0,0,0,0.6);
+}
+
+.gallery-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #e2e8f0;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Banner animation */
+.animate-banner .gallery-title {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUpReveal 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+.animate-banner .gallery-subtitle {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUpReveal 1.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s forwards;
+}
+
+@keyframes fadeUpReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== CATEGORY TABS ========== */
+.gallery-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 55px;
+  margin-top: 7rem;
+}
+
+.tab-btn {
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 10px 28px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+  background: #0078ff;
+  color: #fff;
+  border-color: #0078ff;
+  box-shadow: 0 3px 8px rgba(0, 120, 255, 0.3);
+}
+
+/* ========== MEDIA GRID ========== */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 28px;
+  padding: 0 15px;
+}
+
+.media-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.media-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.media-img,
+.media-video {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border-radius: 14px;
+}
+
+.media-card:hover .media-img,
+.media-card:hover .media-video {
+  transform: scale(1.08);
+}
+
+.media-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 120, 255, 0.8);
+  color: #fff;
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+}
+
+.media-card:hover .media-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== VIEW ALL BUTTON ========== */
+.view-all-container {
+  margin-top: 60px;
+}
+
+.view-all-btn {
+  display: inline-block;
+  background: #0078ff;
+  color: #fff;
+  padding: 12px 35px;
+  font-size: 1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-weight: 500;
+}
+
+.view-all-btn:hover {
+  background: #005ecc;
+  transform: translateY(-3px);
+}
+
+/* ========== MODAL ========== */
+.media-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.modal-img,
+.modal-video {
+  width: 100%;
+  border-radius: 10px;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 2.2rem;
+  color: #fff;
+  cursor: pointer;
+  background: #0078ff;
+  border-radius: 50%;
+  padding: 3px 10px;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  background: #fff;
+  color: #0078ff;
+}
+
+.modal-caption {
+  margin-top: 18px;
+  color: #eee;
+  font-size: 1rem;
+}
+
+/* ========== FADE-IN ANIMATION ========== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 1024px) {
+  .media-img,
+  .media-video {
+    height: 260px;
+  }
+
+  .gallery-part {
+    padding: 6rem 1.5rem 4rem;
+  }
+
+  .gallery-title {
+    font-size: 2.8rem;
+  }
+
+  .gallery-subtitle {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-part {
+    padding: 5rem 1rem 3rem;
+    height: auto;
+  }
+
+  .gallery-title {
+    font-size: 2.4rem;
+  }
+
+  .gallery-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .media-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .media-img,
+  .media-video {
+    height: 220px;
+  }
+
+  .tab-btn {
+    padding: 8px 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-section {
+    padding: 60px 10px;
+  }
+
+  .gallery-part {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 4rem 0.5rem 2.5rem;
+  }
+
+  .gallery-title {
+    font-size: 2rem;
+  }
+
+  .gallery-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .tab-btn {
+    padding: 7px 16px;
+    font-size: 0.85rem;
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .media-img,
+  .media-video {
+    height: 200px;
+  }
+
+  .media-overlay {
+    font-size: 0.85rem;
+  }
+
+  .view-all-btn {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/* Import fonts */
+
+.gallery-section {
+  position: relative;
+  background-color: #fafafa;
+  color: #222;
+  margin-top: -1rem;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.gallery-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60vh;                 /* Increased for better visibility during testing */
+  min-height: 500px;            /* Ensures it's tall enough */
+  background-image: url('https://images.pexels.com/photos/28886728/pexels-photo-28886728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60vh;
+  min-height: 500px;
+  background: rgba(0, 0, 0, 0.58);
+  z-index: 2;
+}
+
+/* Rest of your CSS remains exactly the same as before... */
+
+.gallery-container {
+  position: relative;
+  max-width: 1250px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 3;
+}
+
+.gallery-part {
+  padding: 10rem 2rem 7rem;     /* More padding to push content down over bg */
+  color: white;
+}
+
+/* ... (all other styles unchanged: tabs, grid, modal, responsive, etc.) */
+
+
+/* Pagination */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 40px 0 20px;
+  flex-wrap: wrap;
+}
+
+.pagination-btn {
+  padding: 8px 16px;
+  min-width: 44px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: #f0f0f0;
+  border-color: #999;
+}
+
+.pagination-btn.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+.video-preview-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #111;
+}
+
+.media-video-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  opacity: 0.8;
+  pointer-events: none;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.media-type-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(220, 38, 38, 0.85);
+  color: white;
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.modal-video-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto 1rem;
+}
+
+.modal-video {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  border-radius: 8px;
+  background: black;
+}

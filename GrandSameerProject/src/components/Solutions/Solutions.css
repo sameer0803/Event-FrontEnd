@@ -1,0 +1,327 @@
+/* ===== BASE RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #1b1b1b;
+  --subtext-color: #555;
+  --hover-color: #007bff;
+  --bg-light: #fafafa;
+  --font: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --transition: all 0.35s ease;
+}
+
+/* ===== SECTION ===== */
+.solutions-section {
+  background: #fff;
+  color: var(--text-color);
+  padding: 100px 20px;
+  margin-top: -3rem;
+  font-family: var(--font);
+}
+
+.solutions-container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* ===== HEADER ===== */
+.solutions-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  background: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  height: 15rem;
+  padding: 4rem;
+}
+
+.solutions-header h2 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  font-size: 2.2rem;
+  color: #fff;
+}
+
+.solutions-header p {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.solution-Imgcontent{
+  margin-top: 10rem;
+}
+
+/* ===== CARD LAYOUT ===== */
+.solution-card {
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 7rem;
+  gap: 3rem;
+  transition: var(--transition);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Alternate layout */
+.reverse-layout {
+  flex-direction: row-reverse;
+}
+
+/* ===== IMAGE ===== */
+.solution-image {
+  flex: 1;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.solution-image img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.solution-image img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== CONTENT ===== */
+.solution-content {
+  flex: 1;
+}
+
+.solution-content h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.solution-content p {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Large tablet / small desktop */
+@media (max-width: 992px) {
+  .solution-card {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .solution-image img {
+    height: 280px;
+  }
+
+  .solutions-header h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .solutions-section {
+    padding: 80px 15px;
+  }
+
+  .solution-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .solution-content p {
+    font-size: 1rem;
+  }
+
+  .solution-image img {
+    height: 220px;
+  }
+
+  .solutions-header {
+    height: auto;
+    padding: 3rem 1rem;
+  }
+
+  .solutions-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .solutions-header p {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .solution-card {
+    gap: 1.5rem;
+  }
+
+  .solution-image img {
+    height: 180px;
+  }
+
+  .solution-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .solution-content p {
+    font-size: 0.9rem;
+  }
+
+  .solutions-section {
+    padding: 60px 10px;
+    margin-top: -2rem;
+  }
+
+  .solutions-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .solutions-header p {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+/* ============================= */
+/* GLOBAL IMAGE & SWIPER SAFETY */
+/* ============================= */
+.solution-image,
+.solution-image img,
+.swiper,
+.swiper-slide {
+  max-width: 100%;
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* ============================= */
+/* LARGE SCREENS (1440px+) */
+/* ============================= */
+@media (min-width: 1440px) {
+  .solutions-container {
+    max-width: 1350px;
+  }
+
+  .solution-image img {
+    height: 420px;
+  }
+}
+
+/* ============================= */
+/* LAPTOP / DESKTOP */
+/* ============================= */
+@media (max-width: 1200px) {
+  .solution-card {
+    gap: 2.5rem;
+  }
+
+  .solution-image img {
+    height: 340px;
+  }
+}
+
+/* ============================= */
+/* TABLET FIX (iPad / iPad Pro) */
+/* ============================= */
+@media (max-width: 992px) {
+  .solution-Imgcontent {
+    margin-top: 6rem;
+  }
+
+  .solution-card {
+    margin-bottom: 5rem;
+  }
+
+  .solution-content {
+    text-align: center;
+  }
+}
+
+/* ============================= */
+/* MOBILE LANDSCAPE */
+/* ============================= */
+@media (max-width: 768px) {
+  .solution-Imgcontent {
+    margin-top: 4rem;
+  }
+
+  .solution-card {
+    margin-bottom: 4rem;
+  }
+
+  .solution-image {
+    width: 100%;
+  }
+
+  .solution-content {
+    padding: 0 0.5rem;
+  }
+
+  .solution-content p {
+    line-height: 1.6;
+  }
+}
+
+/* ============================= */
+/* SMALL MOBILE */
+/* ============================= */
+@media (max-width: 480px) {
+  .solution-Imgcontent {
+    margin-top: 3rem;
+  }
+
+  .solution-card {
+    margin-bottom: 3rem;
+  }
+
+  .solution-image img {
+    height: 170px;
+  }
+
+  .solution-content {
+    text-align: left;
+  }
+}
+
+/* ============================= */
+/* VERY SMALL DEVICES (320px) */
+/* ============================= */
+@media (max-width: 360px) {
+  .solution-image img {
+    height: 150px;
+  }
+
+  .solution-content h3 {
+    font-size: 1.15rem;
+  }
+
+  .solution-content p {
+    font-size: 0.85rem;
+  }
+}
+
