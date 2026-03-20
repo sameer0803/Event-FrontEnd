@@ -124,7 +124,7 @@ const Contact = () => {
       setLoading(true);
       setError(null);
 
-      const response = await axios.get("https://grandsameerevents.com/8001/api/contact");
+      const response = await axios.get("https://grandsameerevents.com/api/contact");
 
       const result = response.data;
       const contacts = Array.isArray(result) ? result : result.data || [];
@@ -147,7 +147,7 @@ const Contact = () => {
     if (!window.confirm("Are you sure you want to delete this message?")) return;
 
     try {
-      await axios.delete(`https://grandsameerevents.com/8001/api/contact/${id}`);
+      await axios.delete(`https://grandsameerevents.com/api/contact/${id}`);
 
       setData((prev) => prev.filter((item) => item._id !== id));
       alert("Message deleted successfully");

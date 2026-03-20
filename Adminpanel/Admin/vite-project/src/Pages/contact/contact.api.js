@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "https://grandsameerevents.com/8001/api/contact";
+const API = "https://grandsameerevents.com/api/contact";
 
 // GET All Contacts
 export const getContactsApi = () => {

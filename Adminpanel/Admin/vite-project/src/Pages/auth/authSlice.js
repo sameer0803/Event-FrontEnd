@@ -9,7 +9,7 @@ export const loginUser = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "https://grandsameerevents.com/8001/api/auth/login",
+        "https://grandsameerevents.com/api/auth/login",
         credentials,
         {
           headers: { "Content-Type": "application/json" },

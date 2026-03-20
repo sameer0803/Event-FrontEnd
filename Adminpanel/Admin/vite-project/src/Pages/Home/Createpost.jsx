@@ -18,7 +18,7 @@ const CreateProduct = () => {
     const fetchCategories = async () => {
       try {
         setFetchingCategories(true);
-        const response = await fetch("https://grandsameerevents.com/8001/api/blogcategory");
+        const response = await fetch("https://grandsameerevents.com/api/blogcategory");
 
         if (!response.ok) {
           throw new Error("Failed to load categories");

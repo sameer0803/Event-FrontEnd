@@ -16,7 +16,7 @@
 //   'caseStudies/fetchCategories',
 //   async (_, { rejectWithValue }) => {
 //     try {
-//       const response = await axios.get('https://grandsameerevents.com/8001/api/blogcategory');
+//       const response = await axios.get('https://grandsameerevents.com/api/blogcategory');
 //       return response.data;
 //     } catch (err) {
 //       return rejectWithValue(err.response?.data?.message || 'Failed to fetch categories');
@@ -28,7 +28,7 @@
 //   'caseStudies/fetchProjects',
 //   async (_, { rejectWithValue }) => {
 //     try {
-//       const response = await axios.get('https://grandsameerevents.com/8001/api/product');
+//       const response = await axios.get('https://grandsameerevents.com/api/product');
 //       return response.data;
 //     } catch (err) {
 //       return rejectWithValue(err.response?.data?.message || 'Failed to fetch projects');
@@ -131,7 +131,7 @@ export const fetchCaseStudyCategories = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        "https://grandsameerevents.com/8001/api/blogcategory",
+        "https://grandsameerevents.com/api/blogcategory",
       );
       return response.data;
     } catch (err) {
@@ -146,7 +146,7 @@ export const fetchCaseStudies = createAsyncThunk(
   "caseStudies/fetchProjects",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get("https://grandsameerevents.com/8001/api/product");
+      const response = await axios.get("https://grandsameerevents.com/api/product");
       return response.data;
     } catch (err) {
       return rejectWithValue(
