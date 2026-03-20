@@ -13,7 +13,7 @@
 // //   'gallery/fetchCategories',
 // //   async (_, { rejectWithValue }) => {
 // //     try {
-// //       const response = await axios.get('http://13.232.248.125:8001/api/technology/category');
+// //       const response = await axios.get('https://grandsameerevents.com/8001/api/technology/category');
 // //       return response.data;
 // //     } catch (err) {
 // //       return rejectWithValue(err.response?.data || 'Failed to fetch categories');
@@ -25,7 +25,7 @@
 // //   'gallery/fetchMedia',
 // //   async (_, { rejectWithValue }) => {
 // //     try {
-// //       const response = await axios.get('http://13.232.248.125:8001/api/technology/product');
+// //       const response = await axios.get('https://grandsameerevents.com/8001/api/technology/product');
 // //       return response.data;
 // //     } catch (err) {
 // //       return rejectWithValue(err.response?.data || 'Failed to fetch media');
@@ -129,7 +129,7 @@
 //   async (_, { rejectWithValue }) => {
 //     try {
 //       const response = await axios.get(
-//         "http://13.232.248.125:8001/api/technology/category",
+//         "https://grandsameerevents.com/8001/api/technology/category",
 //       );
 //       return response.data;
 //     } catch (err) {
@@ -145,7 +145,7 @@
 //   async (_, { rejectWithValue }) => {
 //     try {
 //       const response = await axios.get(
-//         "http://13.232.248.125:8001/api/technology/product",
+//         "https://grandsameerevents.com/8001/api/technology/product",
 //       );
 //       return response.data;
 //     } catch (err) {
@@ -243,7 +243,7 @@ export const fetchCategories = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        "http://13.232.248.125:8001/api/technology/category",
+        "https://grandsameerevents.com/8001/api/technology/category",
       );
       return response.data;
     } catch (err) {
@@ -259,7 +259,7 @@ export const fetchMedia = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        "http://13.232.248.125:8001/api/technology/product",
+        "https://grandsameerevents.com/8001/api/technology/product",
       );
       return response.data;
     } catch (err) {
