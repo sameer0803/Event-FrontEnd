@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:8000/api/contact";
+const API = "http://13.232.248.125:8001/api/contact";
 
 // GET All Contacts
 export const getContactsApi = () => {

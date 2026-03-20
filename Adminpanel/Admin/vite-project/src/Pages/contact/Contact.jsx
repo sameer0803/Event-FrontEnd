@@ -1,4 +1,3 @@
-// src/components/ContactList.jsx
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import DataTable from "react-data-table-component";
@@ -6,10 +5,10 @@ import DataTable from "react-data-table-component";
 const columns = [
   {
     name: "Name",
-    selector: (row) => row.usernamee,
+    selector: (row) => row.username,
     sortable: true,
     cell: (row) => (
-      <div className="font-medium text-gray-900">{row.usernamee}</div>
+      <div className="font-medium text-gray-900">{row.username || "—"}</div>
     ),
   },
   {
@@ -20,6 +19,11 @@ const columns = [
   {
     name: "Phone",
     selector: (row) => row.phone,
+    sortable: true,
+  },
+  {
+    name: "Subject",
+    selector: (row) => row.subject,
     sortable: true,
   },
   {
@@ -120,10 +124,9 @@ const Contact = () => {
       setLoading(true);
       setError(null);
 
-      const response = await axios.get("http://localhost:8000/api/contact");
+      const response = await axios.get("http://13.232.248.125:8001/api/contact");
 
       const result = response.data;
-      // Assuming the response is { data: [...] } or just [...]
       const contacts = Array.isArray(result) ? result : result.data || [];
       setData(contacts);
     } catch (err) {
@@ -138,24 +141,26 @@ const Contact = () => {
     fetchContacts();
   }, []);
 
+  // ──────────────────────────────────────────────
+  // IMPORTANT: handleDelete MUST be defined BEFORE rowsWithDelete
   const handleDelete = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this contact?")) {
-      return;
-    }
+    if (!window.confirm("Are you sure you want to delete this message?")) return;
 
     try {
-      await axios.delete(`http://localhost:8000/api/contact/${id}`);
+      await axios.delete(`http://13.232.248.125:8001/api/contact/${id}`);
 
-      // Remove from UI
       setData((prev) => prev.filter((item) => item._id !== id));
-      alert("Contact deleted successfully");
+      alert("Message deleted successfully");
     } catch (err) {
-      console.error("Delete error:", err);
-      alert("Failed to delete contact: " + err.message);
+      console.error("Delete failed:", err);
+      alert(
+        "Failed to delete: " +
+          (err.response?.data?.message || err.message || "Unknown error")
+      );
     }
   };
+  // ──────────────────────────────────────────────
 
-  // Add delete handler to each row object
   const rowsWithDelete = data.map((row) => ({
     ...row,
     handleDelete,
@@ -163,12 +168,11 @@ const Contact = () => {
 
   const filteredItems = rowsWithDelete.filter(
     (item) =>
-      (item.usernamee?.toLowerCase() || "").includes(
-        filterText.toLowerCase(),
-      ) ||
+      (item.username?.toLowerCase() || "").includes(filterText.toLowerCase()) ||
       (item.email?.toLowerCase() || "").includes(filterText.toLowerCase()) ||
       (item.phone?.toLowerCase() || "").includes(filterText.toLowerCase()) ||
-      (item.message?.toLowerCase() || "").includes(filterText.toLowerCase()),
+      (item.subject?.toLowerCase() || "").includes(filterText.toLowerCase()) ||
+      (item.message?.toLowerCase() || "").includes(filterText.toLowerCase())
   );
 
   return (
@@ -180,7 +184,7 @@ const Contact = () => {
 
         <input
           type="text"
-          placeholder="Search by name, email, phone or message..."
+          placeholder="Search by name, email, phone, subject or message..."
           value={filterText}
           onChange={(e) => setFilterText(e.target.value)}
           className="bg-white border border-gray-300 text-gray-900 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-red-500/40 w-full sm:w-96 transition"

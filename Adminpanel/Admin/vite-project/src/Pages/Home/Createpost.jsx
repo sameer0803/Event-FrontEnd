@@ -18,7 +18,7 @@ const CreateProduct = () => {
     const fetchCategories = async () => {
       try {
         setFetchingCategories(true);
-        const response = await fetch("http://localhost:8000/api/blogcategory");
+        const response = await fetch("http://13.232.248.125:8001/api/blogcategory");
 
         if (!response.ok) {
           throw new Error("Failed to load categories");

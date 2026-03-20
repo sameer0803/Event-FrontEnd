@@ -58,19 +58,19 @@ const Dashboard = () => {
           techCategoriesRes,
         ] = await Promise.all([
           axios
-            .get("http://localhost:8000/api/users")
+            .get("http://13.232.248.125:8001/api/users")
             .catch(() => ({ data: null })),
           axios
-            .get("http://localhost:8000/query")
+            .get("http://13.232.248.125:8001/query")
             .catch(() => ({ data: null })),
           axios
-            .get("http://localhost:8000/api/contact")
+            .get("http://13.232.248.125:8001/api/contact")
             .catch(() => ({ data: null })),
           axios
-            .get("http://localhost:8000/api/technology/product")
+            .get("http://13.232.248.125:8001/api/technology/product")
             .catch(() => ({ data: null })),
           axios
-            .get("http://localhost:8000/api/technology/category")
+            .get("http://13.232.248.125:8001/api/technology/category")
             .catch(() => ({ data: null })),
         ]);
 
