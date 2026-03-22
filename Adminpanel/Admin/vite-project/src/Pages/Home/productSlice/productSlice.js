@@ -5,7 +5,7 @@
 //   'product/fetchCategories',
 //   async (_, { rejectWithValue }) => {
 //     try {
-//       const response = await fetch("https://grandsameerevents.com/api/blogcategory");
+//       const response = await fetch("https://api.grandsameerevents.com/api/blogcategory");
 //       if (!response.ok) throw new Error("Failed to load categories");
 
 //       const result = await response.json();
@@ -120,7 +120,7 @@ export const fetchCategories = createAsyncThunk(
   "product/fetchCategories",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await fetch("https://grandsameerevents.com/api/blogcategory");
+      const res = await fetch("https://api.grandsameerevents.com/api/blogcategory");
       if (!res.ok) throw new Error("Failed to load categories");
       const data = await res.json();
       if (!data.success) throw new Error(data.message || "Failed");

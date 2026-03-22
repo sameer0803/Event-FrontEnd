@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://grandsameerevents.com/api/blogcategory",
+  baseURL: "https://api.grandsameerevents.com/api/blogcategory",
 });
 
 // CREATE

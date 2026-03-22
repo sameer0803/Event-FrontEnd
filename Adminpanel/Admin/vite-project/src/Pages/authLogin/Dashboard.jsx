@@ -58,19 +58,19 @@ const Dashboard = () => {
           techCategoriesRes,
         ] = await Promise.all([
           axios
-            .get("https://grandsameerevents.com/api/users")
+            .get("https://api.grandsameerevents.com/api/users")
             .catch(() => ({ data: null })),
           axios
-            .get("https://grandsameerevents.com/query")
+            .get("https://api.grandsameerevents.com/query")
             .catch(() => ({ data: null })),
           axios
-            .get("https://grandsameerevents.com/api/contact")
+            .get("https://api.grandsameerevents.com/api/contact")
             .catch(() => ({ data: null })),
           axios
-            .get("https://grandsameerevents.com/api/technology/product")
+            .get("https://api.grandsameerevents.com/api/technology/product")
             .catch(() => ({ data: null })),
           axios
-            .get("https://grandsameerevents.com/api/technology/category")
+            .get("https://api.grandsameerevents.com/api/technology/category")
             .catch(() => ({ data: null })),
         ]);
 

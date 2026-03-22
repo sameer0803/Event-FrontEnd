@@ -347,7 +347,7 @@
 
 // //       const [productsRes, categoriesRes] = await Promise.all([
 // //         getProductsApi(),
-// //         fetch("https://grandsameerevents.com/api/blogcategory").then((r) => r.json()),
+// //         fetch("https://api.grandsameerevents.com/api/blogcategory").then((r) => r.json()),
 // //       ]);
 
 // //       setProducts(productsRes.data?.data || productsRes.data || []);
@@ -746,7 +746,7 @@
 
 // //       const [productsRes, categoriesRes] = await Promise.all([
 // //         getProductsApi(),
-// //         fetch("https://grandsameerevents.com/api/blogcategory").then((r) => r.json()),
+// //         fetch("https://api.grandsameerevents.com/api/blogcategory").then((r) => r.json()),
 // //       ]);
 
 // //       setProducts(productsRes.data?.data || productsRes.data || []);
@@ -1169,7 +1169,7 @@
 
 //       const [productsRes, categoriesRes] = await Promise.all([
 //         getProductsApi(),
-//         fetch("https://grandsameerevents.com/api/blogcategory").then((r) => r.json()),
+//         fetch("https://api.grandsameerevents.com/api/blogcategory").then((r) => r.json()),
 //       ]);
 
 //       setProducts(productsRes.data?.data || productsRes.data || []);
@@ -1602,7 +1602,7 @@
 
 //       const [productsRes, categoriesRes] = await Promise.all([
 //         getProductsApi(),
-//         fetch("https://grandsameerevents.com/api/blogcategory").then((r) => r.json()),
+//         fetch("https://api.grandsameerevents.com/api/blogcategory").then((r) => r.json()),
 //       ]);
 
 //       setProducts(productsRes.data?.data || productsRes.data || []);
@@ -2054,7 +2054,7 @@ export default function ProductTable() {
 
       const [productsRes, categoriesRes] = await Promise.all([
         getProductsApi(),
-        fetch("https://grandsameerevents.com/api/blogcategory").then((r) => r.json()),
+        fetch("https://api.grandsameerevents.com/api/blogcategory").then((r) => r.json()),
       ]);
 
       setProducts(productsRes.data?.data || productsRes.data || []);

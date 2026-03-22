@@ -70,7 +70,7 @@ const ContactForm = () => {
         message: formData.message.trim()
       };
 
-      const response = await fetch("https://grandsameerevents.com/api/contact/create", {
+      const response = await fetch("https://api.grandsameerevents.com/api/contact/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
